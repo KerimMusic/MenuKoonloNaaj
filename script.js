@@ -82,6 +82,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // ----- Orden aleatorio de los botones -----
+    const container = document.querySelector('.container');
+    const btnList = Array.from(container.querySelectorAll('.btn'));
+
+    // Algoritmo Fisher-Yates para mezclar
+    for (let i = btnList.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [btnList[i], btnList[j]] = [btnList[j], btnList[i]];
+    }
+
+    // Reinsertar en el nuevo orden (la .card se queda arriba)
+    btnList.forEach(btn => container.appendChild(btn));
+
     // Fallback para navegadores que no soportan pointerdown (opcional)
     // ya que pointerdown cubre mouse y touch en la mayoría de navegadores modernos.
 });
