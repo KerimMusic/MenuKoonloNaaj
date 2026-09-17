@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => circle.remove(), 600);
     }
 
-    // ----- Función para mostrar toast -----
+    // ----- Función para mostrar toast -----a
     let toastTimeout;
     function showToast(message) {
         // Eliminar toast anterior si existe
